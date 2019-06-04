@@ -3,13 +3,22 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "date-fns": "^1.30.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
+    "react-hooks-async": "^2.1.0",
+    "react-image": "^2.1.1",
+    "react-lazyload": "^2.6.1",
+    "react-masonry-component": "^6.2.1",
+    "react-scripts": "3.0.1",
+    "styled-components": "^4.2.1",
+    "typescript": "^3.4.5"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build:css": "postcss src/css/tailwind.css -o src/css/index.css",
+    "watch:css": "postcss src/css/tailwind.css -o src/css/index.css -w",
+    "start": "npm run build:css && react-scripts start",
+    "build": "npm run build:css && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -27,5 +36,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.5.1",
+    "postcss-cli": "^6.1.2",
+    "tailwindcss": "^1.0.1"
   }
 }
