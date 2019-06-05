@@ -7,6 +7,7 @@ import { useAsyncTaskFetch } from "react-hooks-async/dist/use-async-task-fetch";
 
 import ImageCard from './ImageCard'
 import Loader from "./Loader";
+import Pagination from "./Pagination"
 
 const Err = ({ error }) => (
     <div>
@@ -14,7 +15,7 @@ const Err = ({ error }) => (
     </div>
   );
 
-const ImageResults = ({ query }) => {
+const ImageResults = ({ query, currentPage, setCurrentPage }) => {
 
     const gridStyle = {
         display: `grid`,
@@ -31,7 +32,7 @@ const ImageResults = ({ query }) => {
     const url =
     
         `${unsplashURL}` +
-        `page=1&per_page=28&query=${query}&` +
+        `page=${currentPage}&per_page=28&query=${query}&` +
         `client_id=${envAPIKey}`
 
     const delayTask = useAsyncTaskDelay(500, [query]);
@@ -51,13 +52,7 @@ const ImageResults = ({ query }) => {
                     {fetchTask.result.total} results for <span className="font-semibold">{query}</span>
                 </h3>
 
-                <ul className="flex list-reset border border-grey-light rounded max-w-auto font-sans">
-                    <li><a className="block hover:text-white hover:bg-blue text-blue border-r border-grey-light px-3 py-2" href="#">Previous</a></li>
-                    <li><a className="block hover:text-white hover:bg-blue text-blue border-r border-grey-light px-3 py-2" href="#">1</a></li>
-                    <li><a className="block hover:text-white hover:bg-blue text-blue border-r border-grey-light px-3 py-2" href="#">2</a></li>
-                    <li><a className="block text-white bg-blue border-r border-blue px-3 py-2" href="#">3</a></li>
-                    <li><a className="block hover:text-white hover:bg-blue text-blue px-3 py-2" href="#">Next</a></li>
-                </ul>
+                <Pagination currentPage={currentPage} setCurrentPage={setCurrentPage} totalPages={fetchTask.result.total_pages} />
 
 
 

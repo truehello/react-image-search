@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-//import logo from './logo.svg';
+
 import "./App.css";
 
 import Header from "./components/Header";
@@ -9,8 +9,8 @@ import ImageResults from './components/ImageResults'
 
 function App() {
 
-  const [searchQuery, setSearchQuery] = useState("space");
-  const [pageQuery , setPageQuery ] = useState(1)
+  const [searchQuery, setSearchQuery] = useState("summer");
+  const [currentPage , setCurrentPage ] = useState(1)
 
   return (
     <div className="App h-screen">
@@ -18,7 +18,7 @@ function App() {
 
       {/* <HomeScreen /> */}
 
-      <ImageResults query={searchQuery} pageNumber={pageQuery} setPageQuery={setPageQuery} />
+      <ImageResults query={searchQuery} currentPage={currentPage} setCurrentPage={setCurrentPage} />
     </div>
   );
 }
