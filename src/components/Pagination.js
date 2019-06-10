@@ -1,11 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+
 const Pagination = ({ currentPage, setCurrentPage, totalPages }) => {
   Pagination.propTypes = {
     startPage: PropTypes.number,
     lastPage: PropTypes.number
   };
+
 
   let prevVal;
   let nextVal;
@@ -52,10 +54,10 @@ const Pagination = ({ currentPage, setCurrentPage, totalPages }) => {
   };
 
   return (
-    <ul className="flex list-reset border border-grey-light rounded max-w-auto font-sans">
+    <ul className="flex flex-wrap list-reset border border-grey-light rounded max-w-auto font-sans">
       <li>
         <button
-          className="block hover:text-white hover:bg-blue text-blue border-r border-grey-light px-3 py-2"
+          className="block hover:text-gray-500 hover:bg-blue text-blue border-r border-grey-light px-3 py-2"
           value="1"
           onClick={updateCurrentPage}
         >
@@ -65,11 +67,12 @@ const Pagination = ({ currentPage, setCurrentPage, totalPages }) => {
 
       <li>
         <button
-          className="block hover:text-white hover:bg-blue text-blue border-r border-grey-light px-3 py-2"
+          className="block hover:text-gray-500 hover:bg-blue text-blue border-r border-grey-light px-3 py-2"
           value={prevVal}
           onClick={updateCurrentPage}
         >
-          Previous
+           &#xab;
+           
         </button>
       </li>
 
@@ -78,8 +81,8 @@ const Pagination = ({ currentPage, setCurrentPage, totalPages }) => {
         <button
           className={
             currentPage === page
-              ? "block text-white bg-blue border-r border-blue px-3 py-2"
-              : "block hover:text-white hover:bg-blue text-blue border-r border-grey-light px-3 py-2"
+              ? "block text-gray-500 bg-blue border-r border-blue px-3 py-2"
+              : "block hover:text-gray-500 hover:bg-blue text-blue border-r border-grey-light px-3 py-2"
           }
           value={page}
           onClick={updateCurrentPage}
@@ -91,16 +94,16 @@ const Pagination = ({ currentPage, setCurrentPage, totalPages }) => {
 
       <li>
         <button
-          className="block hover:text-white hover:bg-blue text-blue border-r border-grey-light px-3 py-2"
+          className="block hover:text-gray-500 hover:bg-blue text-blue border-r border-grey-light px-3 py-2"
           value={nextVal}
           onClick={updateCurrentPage}
         >
-          Next
+          &#xbb;
         </button>
       </li>
       <li>
         <button
-          className="block hover:text-white hover:bg-blue text-blue border-r border-grey-light px-3 py-2"
+          className="block hover:text-gray-500 hover:bg-blue text-blue border-r border-grey-light px-3 py-2"
           value={endIndex}
           onClick={updateCurrentPage}
         >

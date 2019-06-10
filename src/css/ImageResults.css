@@ -1,0 +1,21 @@
+.gridStyle {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .gridStyle {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .gridStyle {
+    grid-template-columns: 1fr;
+  }
+}
+
+.parent:hover .parent-hover\:show-card {
+  display:block;
+}

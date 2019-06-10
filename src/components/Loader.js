@@ -8,6 +8,8 @@ const LoaderArea = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
+  justify-content: center;
+  height: 100%;
 `;
 
 const Loader = ({ abort, width }) => {
