@@ -9,7 +9,7 @@ import ImageResults from './components/ImageResults'
 
 function App() {
 
-  const [searchQuery, setSearchQuery] = useState("summer");
+  const [searchQuery, setSearchQuery] = useState("jazz");
   const [currentPage , setCurrentPage ] = useState(1)
 
   return (

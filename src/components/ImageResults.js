@@ -63,7 +63,7 @@ const ImageResults = ({ query, currentPage, setCurrentPage }) => {
   return (
     <main className="relative pt-32 lg:pt-24 xl:pt-24">
       <section className="flex flex-col md:flex-row lg:flex-row xl:flex-row items-center justify-between w-full p-6 mb-4">
-        <h3 className="text-1xl font-light text-left sm:mb-4 ">
+        <h3 className="text-1xl font-light text-left mb-2 ">
           {fetchTask.result.total} results for{" "}
           <span className="font-semibold">{query}</span>
         </h3>

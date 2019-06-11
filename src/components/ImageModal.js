@@ -34,30 +34,42 @@ const ImageModal = ({ handleClose, modalObj }) => {
         />
 
         <div className="px-6 py-4">
-          <div className="font-bold text-xl mb-2">{modalObj.alt_description}</div>
+          <div className="font-bold text-xl mb-2">
+            {modalObj.alt_description}
+          </div>
           <p className="text-gray-700 text-base">{modalObj.description}</p>
         </div>
+
+        <div>
+          <a
+            href={modalObj.links.download}
+            rel="noreferrer noopener"
+            target="_blank"
+            className="inline-block text-sm px-4 py-2 leading-none border rounded text-black border-black hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0"
+          >
+            Download
+          </a>
+        </div>
+
         <div className="flex items-center px-6 py-4">
-              <img
-                className="w-10 h-10 rounded-full mr-4"
-                src={modalObj.user.profile_image.small}
-                alt={modalObj.user.name}
-              />
-              <div className="text-sm">
-                <p className="text-gray-900 leading-none">
-                  {modalObj.user.name}
-                </p>
-                <p className="text-gray-600 leading-none">
-                  {modalObj.user.location}
-                </p>
-                <p className="text-gray-600">
-                  {distanceInWordsToNow(modalObj.created_at, {
-                    includeSeconds: true
-                  })}{" "}
-                  ago
-                </p>
-              </div>
-            </div>
+          <img
+            className="w-10 h-10 rounded-full mr-4"
+            src={modalObj.user.profile_image.small}
+            alt={modalObj.user.name}
+          />
+          <div className="text-sm">
+            <p className="text-gray-900 leading-none">{modalObj.user.name}</p>
+            <p className="text-gray-600 leading-none">
+              {modalObj.user.location}
+            </p>
+            <p className="text-gray-600">
+              {distanceInWordsToNow(modalObj.created_at, {
+                includeSeconds: true
+              })}{" "}
+              ago
+            </p>
+          </div>
+        </div>
       </div>
 
       {/* display version for desktop */}
@@ -84,6 +96,18 @@ const ImageModal = ({ handleClose, modalObj }) => {
               </div>
               <p className="text-gray-700 text-base">{modalObj.description}</p>
             </div>
+
+            <div>
+              <a
+                href={modalObj.links.download}
+                rel="noreferrer noopener"
+                target="_blank"
+                className="inline-block text-sm px-4 py-2 leading-none border rounded text-black border-black hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0"
+              >
+                Download
+              </a>
+            </div>
+
             <div className="flex items-center">
               <img
                 className="w-10 h-10 rounded-full mr-4"
