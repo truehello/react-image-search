@@ -1,8 +1,18 @@
-## React Image Search
+# React Image Search
 
 This is a self learning project to practice React dev. Using data from unsplash API
 
 Latest build is viewable at [react-image-search.netlify.com](https://react-image-search.netlify.com/).
+
+### Prerequisites
+
+need to get a API key from [unsplash API](https://unsplash.com/developers) 
+
+## Built With
+
+* [React](https://reactjs.org/) - React – A JavaScript library for building user interfaces
+* [tailwindcss](https://tailwindcss.com/) - A utility-first CSS framework for rapidly building custom designs
+* [unsplash API](https://unsplash.com/developers) - The most powerful photo engine in the world
 
 
 ### Hosted on Netlify
