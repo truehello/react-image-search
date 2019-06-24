@@ -4,6 +4,12 @@ This is a self learning project to practice React dev. Using data from unsplash 
 
 Latest build is viewable at [react-image-search.netlify.com](https://react-image-search.netlify.com/).
 
+## TO DO
+
+1. credits and contact info
+2. accounts?
+
+
 ### Prerequisites
 
 need to get a API key from [unsplash API](https://unsplash.com/developers) 
