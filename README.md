@@ -7,7 +7,8 @@ Latest build is viewable at [react-image-search.netlify.com](https://react-image
 ## TO DO
 
 1. credits and contact info
-2. accounts?
+2. darkmode
+3. accounts?
 
 
 ### Prerequisites

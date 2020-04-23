@@ -64,7 +64,7 @@ const ImageModal = ({ handleClose, modalObj }) => {
             </p>
             <p className="text-gray-600">
               {distanceInWordsToNow(modalObj.created_at, {
-                includeSeconds: true
+                includeSeconds: true,
               })}{" "}
               ago
             </p>
@@ -89,7 +89,7 @@ const ImageModal = ({ handleClose, modalObj }) => {
             title={modalObj.alt_description}
           />
 
-          <div className="p-4 flex flex-col justify-between leading-normal">
+          <div className="p-4 flex flex-col justify-between leading-normal w-full">
             <div className="mb-8">
               <div className="text-gray-900 font-bold text-xl mb-2">
                 {modalObj.alt_description}
@@ -97,37 +97,42 @@ const ImageModal = ({ handleClose, modalObj }) => {
               <p className="text-gray-700 text-base">{modalObj.description}</p>
             </div>
 
-            <div>
-              <a
-                href={modalObj.links.download}
-                rel="noreferrer noopener"
-                target="_blank"
-                className="inline-block text-sm px-4 py-2 leading-none border rounded text-black border-black hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0"
-              >
-                Download
-              </a>
-            </div>
+            <div className="flex justify-between items-center">
+              <div className="flex items-center">
+                <img
+                  className="w-10 h-10 rounded-full mr-4"
+                  src={modalObj.user.profile_image.medium}
+                  alt={modalObj.user.name}
+                />
+                <div className="text-sm">
+                  <p className="text-gray-900 leading-none">
+                    {modalObj.user.name}
+                  </p>
+                  <p className="text-gray-600 leading-none">
+                    {modalObj.user.location}
+                  </p>
+                  <p className="text-gray-600">
+                    {distanceInWordsToNow(modalObj.created_at, {
+                      includeSeconds: true,
+                    })}{" "}
+                    ago
+                  </p>
+                </div>
 
-            <div className="flex items-center">
-              <img
-                className="w-10 h-10 rounded-full mr-4"
-                src={modalObj.user.profile_image.medium}
-                alt={modalObj.user.name}
-              />
-              <div className="text-sm">
-                <p className="text-gray-900 leading-none">
-                  {modalObj.user.name}
-                </p>
-                <p className="text-gray-600 leading-none">
-                  {modalObj.user.location}
-                </p>
-                <p className="text-gray-600">
-                  {distanceInWordsToNow(modalObj.created_at, {
-                    includeSeconds: true
-                  })}{" "}
-                  ago
-                </p>
+                
               </div>
+
+              <div>
+                  <a
+                    href={modalObj.links.download}
+                    rel="noreferrer noopener"
+                    target="_blank"
+                    className="inline-block text-sm px-4 py-2 leading-none border rounded text-white bg-black border-transparent hover:border-black hover:text-black hover:bg-transparent mt-4 lg:mt-0"
+                  >
+                    Download
+                  </a>
+                </div>
+
             </div>
           </div>
         </div>
